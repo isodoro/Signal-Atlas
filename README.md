@@ -119,8 +119,6 @@ git clone https://github.com/isodoro/Signal-Atlas.git
 cd Signal-Atlas
 ```
 
-The repository is private during development. Access must be granted by the repository owner.
-
 ### 3. Create a Python virtual environment
 
 ```bash
