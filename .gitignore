@@ -1,0 +1,29 @@
+# Python virtual environments
+venv/
+.venv/
+env/
+
+# Python generated files
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# Build and distribution output
+build/
+dist/
+
+# Development and test caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Signal Atlas runtime data
+edge_df.csv
+
+# Local configuration and credentials
+.env
+.env.*
+*.local.cfg
+
+# Archived original project utilities
+original_tools/

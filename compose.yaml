@@ -1,0 +1,14 @@
+services:
+  signal-atlas:
+    build: .
+    container_name: signal-atlas
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:8050:8050"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    environment:
+      SIGNAL_ATLAS_KISMET_HOST: ${SIGNAL_ATLAS_KISMET_HOST:-host.docker.internal}
+      SIGNAL_ATLAS_KISMET_PORT: ${SIGNAL_ATLAS_KISMET_PORT:-2501}
+      SIGNAL_ATLAS_KISMET_USER: ${SIGNAL_ATLAS_KISMET_USER:-kali}
+      SIGNAL_ATLAS_KISMET_PASSWORD: ${SIGNAL_ATLAS_KISMET_PASSWORD:-kali}

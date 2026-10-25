@@ -1,0 +1,236 @@
+/* Dashboard typography */
+body,
+button,
+input,
+select,
+textarea,
+label,
+.dash-dropdown,
+.Select-control,
+.Select-menu-outer {
+    font-family: Tahoma, Verdana, Arial, sans-serif !important;
+    font-size: 13px;
+}
+
+/* Dashboard heading */
+.dashboard-title {
+    font-family: Tahoma, Verdana, Arial, sans-serif;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+/* Control labels */
+.form-label {
+    font-family: Tahoma, Verdana, Arial, sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+body {
+    font-family: Tahoma, Verdana, Arial, sans-serif;
+}
+
+/* Two distinct horizontal rows */
+.dashboard-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 12px;
+    width: 100%;
+}
+
+/* Keep each row horizontal */
+.control-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: nowrap;
+}
+
+/* Keep each label beside its control */
+.control-group {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    white-space: nowrap;
+}
+
+/* Consistent label appearance */
+.control-label {
+    font-family: Tahoma, Verdana, Arial, sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    margin: 0;
+}
+/* Keep dashboard controls compact */
+.dashboard-controls .control-group {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Compact dropdowns */
+.dashboard-controls .Select-control {
+    height: 34px !important;
+    min-height: 34px !important;
+    border-radius: 4px !important;
+}
+
+.dashboard-controls .Select-placeholder,
+.dashboard-controls .Select-value,
+.dashboard-controls .Select-input {
+    line-height: 32px !important;
+    height: 32px !important;
+}
+
+/* Compact dropdown arrow */
+.dashboard-controls .Select-arrow-zone {
+    height: 32px !important;
+}
+
+/* Compact text inputs */
+.dashboard-controls input.form-control {
+    height: 34px !important;
+    min-height: 34px !important;
+    padding: 5px 8px !important;
+    font-family: Tahoma, Verdana, Arial, sans-serif !important;
+    font-size: 13px !important;
+}
+
+/* Consistent labels */
+.dashboard-controls .control-label {
+    font-family: Tahoma, Verdana, Arial, sans-serif !important;
+    font-size: 13px !important;
+    font-weight: 600;
+    margin: 0;
+    white-space: nowrap;
+}
+/* Compact Kismet input boxes */
+.dashboard-controls input.form-control {
+    height: 30px !important;
+    min-height: 30px !important;
+    padding: 2px 6px !important;
+    font-size: 13px !important;
+    line-height: 20px !important;
+    box-sizing: border-box;
+}
+
+/* Compact Update button */
+.dashboard-controls button {
+    padding: 4px 12px !important;
+    font-size: 13px !important;
+    line-height: 20px !important;
+    height: 30px;
+}
+/* Vertically centre Dash dropdown contents */
+.dashboard-controls .dash-dropdown {
+    display: flex !important;
+    align-items: center !important;
+}
+
+.dashboard-controls .dash-dropdown .Select,
+.dashboard-controls .dash-dropdown .Select-control {
+    height: 30px !important;
+    min-height: 30px !important;
+}
+
+.dashboard-controls .dash-dropdown .Select-control {
+    display: flex !important;
+    align-items: center !important;
+}
+
+.dashboard-controls .dash-dropdown .Select-value,
+.dashboard-controls .dash-dropdown .Select-placeholder {
+    display: flex !important;
+    align-items: center !important;
+    height: 100% !important;
+    top: 0 !important;
+}
+
+.dashboard-controls .dash-dropdown .Select-value-label {
+    line-height: normal !important;
+}
+/* Reduce spacing at the top of the dashboard */
+body {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.dashboard {
+    margin-top: 0 !important;
+    padding-top: 5px !important;
+}
+
+/* Tighten dashboard heading spacing */
+.dashboard-title {
+    margin-top: 0 !important;
+    margin-bottom: 8px !important;
+    padding-top: 0 !important;
+}
+
+/* Reduce space before the first control row */
+.dashboard-controls {
+    margin-top: 0 !important;
+    padding-top: 4px !important;
+}
+/* Increase the available height of dropdown menus */
+.dash-dropdown-content {
+    max-height: 600px !important;
+}
+
+.dash-dropdown-options {
+    max-height: 540px !important;
+    overflow-y: auto !important;
+}
+
+
+/* DASHBOARD HEADER: LOGO */
+.dashboard-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    min-height: 150px;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.dashboard-logo-placeholder {
+    flex: 0 0 263px;
+    width: 263px;
+    height: 150px;
+}
+
+.dashboard-header-controls {
+    flex: 1 1 auto;
+    min-width: 0;
+}
+
+.dashboard-header-controls .dashboard-controls {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+@media (max-width: 900px) {
+    .dashboard-header {
+        gap: 12px;
+    }
+
+    .dashboard-logo-placeholder {
+        flex-basis: 263px;
+    }
+}
+
+
+/* Dashboard logo image */
+.dashboard-logo-image {
+    display: block;
+    width: 263px;
+    height: 150px;
+    object-fit: contain;
+}

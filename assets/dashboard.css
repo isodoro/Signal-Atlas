@@ -1,0 +1,710 @@
+.dashboard {
+    width: 100%;
+    min-height: 100vh;
+    padding: 12px;
+    box-sizing: border-box;
+    text-align: left;
+}
+
+.dashboard h3 {
+    margin-bottom: 12px;
+}
+
+.dashboard-legend {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px 18px;
+    padding: 10px 12px;
+    margin-bottom: 12px;
+    background: #f3f3f3;
+    border-radius: 5px;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    font-size: 12px;
+}
+
+.visualisation-area {
+    width: 100%;
+    height: calc(100vh - 200px);
+    min-height: 600px;
+}
+
+.visualisation-panel {
+    width: 100%;
+    height: 100%;
+    min-height: 600px;
+}
+
+.radar-status {
+    margin: 8px 0;
+    font-size: 13px;
+}
+
+@media (max-width: 768px) {
+    .dashboard {
+        padding: 6px;
+    }
+
+    .dashboard-legend {
+        gap: 8px 12px;
+    }
+
+    .visualisation-area {
+        height: 70vh;
+        min-height: 400px;
+    }
+
+    .visualisation-panel {
+        min-height: 400px;
+    }
+}
+/* Give the vis.js network an explicit height */
+#net {
+    width: 100%;
+    height: 100% !important;
+    min-height: 600px;
+}
+
+#net .vis-network {
+    width: 100% !important;
+    height: 100% !important;
+}
+.around-me-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    width: 100%;
+    align-items: stretch;
+}
+
+.around-me-panel {
+    min-width: 0;
+    padding: 16px;
+    background: white;
+    border: 1px solid #d5d5d5;
+    border-radius: 6px;
+}
+
+.around-me-panel h4 {
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+.around-me-description {
+    text-align: center;
+    color: #555;
+    min-height: 38px;
+}
+
+.around-me-question {
+    text-align: center;
+    font-weight: 600;
+    min-height: 42px;
+}
+
+.around-me-navigation {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.around-me-navigation h4 {
+    flex: 1;
+    margin: 0;
+}
+
+.around-me-status {
+    text-align: center;
+    padding: 10px;
+    color: #555;
+}
+
+@media (max-width: 900px) {
+    .around-me-grid {
+        grid-template-columns: 1fr;
+    }
+}
+#around_me_container {
+    height: calc(100vh - 180px);
+    min-height: 500px;
+}
+
+#timeline_container {
+    height: calc(100vh - 180px);
+    min-height: 500px;
+}
+
+.around-me-grid {
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.around-me-panel {
+    height: 100%;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.around-me-panel .vis-network {
+    flex: 1;
+    min-height: 0;
+}
+#around_aps_network,
+#around_devices_network {
+    flex: 1;
+    min-height: 0;
+    height: 100%;
+    width: 100%;
+}
+
+#around_aps_network .vis-network,
+#around_devices_network .vis-network {
+    height: 100% !important;
+    width: 100% !important;
+}
+.around-me-panel > .dash-graph {
+    flex: 1;
+    min-height: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.around-me-panel .js-plotly-plot,
+.around-me-panel .plot-container,
+.around-me-panel .svg-container {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+
+/* TIMELINE STAGE 1: DEVICE DETAILS */
+
+#timeline_container .timeline-panel-content {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+    min-height: 0;
+    width: 100%;
+}
+
+#timeline_container .timeline-half-graph {
+    flex: 0 0 50%;
+    min-height: 180px;
+    max-height: 50%;
+}
+
+#timeline_container .timeline-details {
+    flex: 1 1 50%;
+    min-height: 0;
+    overflow-y: auto;
+    padding: 10px 16px;
+    border-top: 1px solid #d9e0e8;
+    background: #f8fafc;
+    color: #334155;
+    font-size: 0.9rem;
+}
+
+#timeline_container .timeline-details-content {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+#timeline_container .timeline-detail-section {
+    padding-bottom: 7px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+#timeline_container .timeline-detail-section ul {
+    margin: 4px 0 0;
+    padding-left: 20px;
+}
+
+
+/* TIMELINE STAGE 2: AP ACTIVITY */
+
+#timeline_container .timeline-controls {
+    padding: 8px 12px 10px;
+    border-bottom: 1px solid #d9e0e8;
+    background: #f8fafc;
+}
+
+#timeline_container .timeline-control-label {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: #334155;
+    margin-bottom: 4px;
+}
+
+#timeline_container .timeline-mode-selector {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-bottom: 9px;
+}
+
+#timeline_container .timeline-mode-selector label {
+    margin-right: 12px;
+    font-size: 0.9rem;
+}
+
+#timeline_container .timeline-mode-selector input {
+    margin-right: 5px;
+}
+
+#timeline_container .timeline-ap-search {
+    max-width: 100%;
+}
+
+
+
+/* PROBED SSIDs: percentage-based layout */
+#probed_ssids_container {
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+}
+
+.probed-ssids-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 15px;
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+    align-items: stretch;
+}
+
+.probed-ssids-panel {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    min-height: 0;
+    height: 100%;
+    padding: 16px;
+    background: #FFFFFF;
+    color: #1F2937;
+    border: 1px solid #D5D5D5;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.probed-ssids-radar-panel {
+    background: #FFFFFF;
+    color: #1F2937;
+    border-color: #D5D5D5;
+}
+
+.probed-ssids-table {
+    flex: 1 1 auto;
+    min-height: 0;
+}
+
+.probed-ssids-table .dash-table-container {
+    height: 100%;
+}
+
+.probed-ssids-table .dash-spreadsheet-container {
+    min-height: 0;
+}
+
+.probed-ssids-radar-panel > .dash-graph,
+.probed-ssids-radar-panel #probed_ssids_radar {
+    flex: 1 1 auto;
+    min-height: 0;
+    height: 100% !important;
+    width: 100%;
+}
+
+.probed-ssids-radar-panel .js-plotly-plot,
+.probed-ssids-radar-panel .plot-container,
+.probed-ssids-radar-panel .svg-container {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+@media (max-width: 900px) {
+    #probed_ssids_container {
+        height: 100%;
+        min-height: 0;
+    }
+
+    .probed-ssids-grid {
+        grid-template-columns: minmax(0, 1fr);
+        grid-template-rows: minmax(0, 1fr) minmax(0, 1fr);
+        height: 100%;
+    }
+
+    .probed-ssids-panel {
+        min-height: 0;
+    }
+}
+
+/* AP Identity Comparison */
+#ap_identity_container {
+    height: calc(100vh - 190px);
+    min-height: 600px;
+    padding: 12px;
+    box-sizing: border-box;
+}
+
+.ap-identity-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.35fr);
+    gap: 14px;
+    height: calc(100% - 42px);
+    min-height: 0;
+}
+
+.ap-identity-panel {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    min-height: 0;
+    padding: 12px;
+    background: #FFFFFF;
+    border: 1px solid #D1D5DB;
+    border-radius: 6px;
+    overflow: auto;
+}
+
+.ap-identity-heading {
+    font-size: 17px;
+    font-weight: bold;
+    color: #1F2937;
+    margin-bottom: 8px;
+}
+
+.ap-identity-description {
+    font-size: 12px;
+    color: #4B5563;
+    margin-bottom: 12px;
+}
+
+@media (max-width: 900px) {
+    #ap_identity_container {
+        height: auto;
+        min-height: 1000px;
+    }
+
+    .ap-identity-grid {
+        grid-template-columns: minmax(0, 1fr);
+        grid-template-rows: minmax(400px, auto) minmax(500px, auto);
+        height: auto;
+    }
+}
+
+
+/* MANAGEMENT-FRAME ANOMALIES: use the same sizing model as Around Me */
+#management_frame_container {
+    height: calc(100vh - 180px);
+    min-height: 500px;
+}
+
+#management_frame_container .management-frame-grid {
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    width: 100%;
+    align-items: stretch;
+    padding: 0 12px;
+    box-sizing: border-box;
+}
+
+#management_frame_container .management-frame-panel {
+    height: 100%;
+    min-width: 0;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    background: #FFFFFF;
+    border: 1px solid #CBD5E1;
+    border-radius: 6px;
+    box-sizing: border-box;
+}
+
+#management_frame_container .management-frame-radar-panel > .dash-graph {
+    flex: 1;
+    min-height: 0;
+    height: 100%;
+    width: 100%;
+}
+
+#management_frame_container #management_frame_radar {
+    flex: 1;
+    min-height: 0;
+    height: 100%;
+    width: 100%;
+}
+
+#management_frame_container #management_frame_radar .js-plotly-plot,
+#management_frame_container #management_frame_radar .plot-container,
+#management_frame_container #management_frame_radar .svg-container {
+    height: 100% !important;
+    width: 100% !important;
+}
+
+#management_frame_container .management-frame-panel-heading {
+    flex: 0 0 auto;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 10px 12px;
+}
+
+#management_frame_container .management-frame-alert-details {
+    flex: 1;
+    min-height: 0;
+    padding: 8px 12px;
+    overflow-y: auto;
+}
+
+@media (max-width: 900px) {
+    #management_frame_container {
+        height: auto;
+        min-height: 100vh;
+    }
+
+    #management_frame_container .management-frame-grid {
+        height: auto;
+        grid-template-columns: 1fr;
+        grid-template-rows: minmax(400px, 1fr) minmax(300px, 1fr);
+    }
+
+    #management_frame_container .management-frame-panel {
+        min-height: 300px;
+    }
+}
+
+
+/* MANAGEMENT-FRAME RADAR PANEL HEADING */
+#management_frame_container .management-frame-heading {
+    flex: 0 0 auto;
+    font-size: 21px;
+    font-weight: 700;
+    padding: 12px 14px 4px;
+}
+
+#management_frame_container .management-frame-description {
+    flex: 0 0 auto;
+    font-size: 13px;
+    line-height: 1.4;
+    padding: 0 14px 8px;
+}
+
+/* AROUND ME AP FILTERS */
+
+/* AROUND ME AP FILTERS */
+
+.around-me-filters {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin: 0 0 8px;
+    padding: 9px;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    background: #f8f9fa;
+    flex: 0 0 auto;
+}
+
+.around-me-filter-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1.5fr;
+    gap: 8px;
+    align-items: end;
+}
+
+.around-me-filter-control {
+    min-width: 0;
+}
+
+.around-me-filter-control label {
+    display: block;
+    margin-bottom: 3px;
+    color: #444;
+    font-size: 0.76rem;
+    font-weight: 600;
+}
+
+.around-me-frequency-control {
+    padding: 0 8px 4px;
+}
+
+.around-me-frequency-control .rc-slider {
+    margin: 10px 4px 4px;
+}
+
+.around-me-clear-control {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.around-me-clear-button {
+    width: 100%;
+}
+
+@media (max-width: 1200px) {
+    .around-me-filter-row {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .around-me-filter-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* WPA HANDSHAKES VIEW — isolated from existing dashboard layouts */
+#wpa_handshakes_container {
+    width: 100%;
+    height: 100%;
+    min-height: 600px;
+}
+
+#wpa_handshakes_container .wpa-handshakes-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 16px;
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+}
+
+#wpa_handshakes_container .wpa-handshakes-panel {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    min-height: 0;
+    height: 100%;
+    padding: 12px;
+    background: #fff;
+    border: 1px solid #d5d5d5;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+#wpa_handshakes_container .wpa-handshakes-heading {
+    flex: 0 0 auto;
+    padding: 4px 6px 10px;
+    font-size: 19px;
+    font-weight: 700;
+}
+
+#wpa_handshakes_container .wpa-handshakes-radar-panel > .dash-graph {
+    flex: 1 1 auto;
+    min-height: 0;
+}
+
+#wpa_handshakes_container .wpa-handshakes-status {
+    flex: 0 0 auto;
+    padding: 8px;
+    margin-bottom: 10px;
+    background: #f5f6f7;
+    border-radius: 4px;
+    font-size: 13px;
+}
+
+#wpa_handshakes_container .wpa-handshakes-ap-details {
+    flex: 0 0 auto;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    line-height: 1.6;
+    font-size: 13px;
+}
+
+#wpa_handshakes_container .wpa-handshakes-ssid {
+    font-size: 17px;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+#wpa_handshakes_container .wpa-handshakes-client-list {
+    flex: 0 0 auto;
+    max-height: 30%;
+    overflow-y: auto;
+    margin-bottom: 10px;
+}
+
+#wpa_handshakes_container .wpa-handshakes-client-item {
+    padding: 8px 10px;
+    margin-bottom: 5px;
+    background: #f5f6f7;
+    border-left: 3px solid #6c757d;
+    border-radius: 3px;
+}
+
+#wpa_handshakes_container .wpa-handshakes-client-mac {
+    font-size: 13px;
+    font-weight: 700;
+}
+
+#wpa_handshakes_container .wpa-handshakes-client-status {
+    margin-top: 3px;
+    font-size: 12px;
+    color: #444;
+}
+
+#wpa_handshakes_container .wpa-handshakes-label {
+    flex: 0 0 auto;
+    margin: 4px 0 6px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+#wpa_handshakes_container .wpa-handshakes-messages {
+    flex: 1 1 auto;
+    min-height: 0;
+    overflow-y: auto;
+    margin-top: 10px;
+}
+
+#wpa_handshakes_container .wpa-handshakes-client-heading {
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+#wpa_handshakes_container .wpa-handshakes-exchange-status {
+    padding: 8px;
+    margin-bottom: 8px;
+    background: #f5f6f7;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 13px;
+}
+
+#wpa_handshakes_container .wpa-handshakes-message-count {
+    margin-bottom: 8px;
+    font-size: 12px;
+    color: #555;
+}
+
+#wpa_handshakes_container .wpa-handshakes-message-card {
+    padding: 9px 10px;
+    margin-bottom: 7px;
+    border: 1px solid #dedede;
+    border-radius: 4px;
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+#wpa_handshakes_container .wpa-handshakes-message-title {
+    font-weight: 700;
+    font-size: 13px;
+}
